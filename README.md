@@ -9,3 +9,9 @@ The forces acting on the bodies are shown in the figures below.
 
 The forces acting on mass m1 is as seen in the following along with the corresponding equations of motion.
 
+<img src="https://github.com/user-attachments/assets/2fca9f8b-64a9-4bd2-9ca7-6f1aa8834f56" alt="Time Period" width="400">
+
+<img src="https://github.com/user-attachments/assets/1e2c73df-584a-46af-844f-9fdc8f9ed427" alt="Time Period" width="400">
+
+<img src="https://github.com/user-attachments/assets/c08a6b0b-da36-4490-aa60-660b3ce45754" alt="Time Period" width="400">
+
