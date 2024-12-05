@@ -169,4 +169,3 @@ Finally, they can are written explicitly in the matrix form as follows:
 
 <img src="https://github.com/user-attachments/assets/fa6667ce-2e53-4893-9fa1-608f0d4aace5" alt="Time Period" width="400">
 
-
