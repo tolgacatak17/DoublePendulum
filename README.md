@@ -1,52 +1,131 @@
-In this project, the motion of the double pendulum is investigated using RK4 method and built-in MATLAB function ode45.
+# Modeling the Behavior of a Double Pendulum
 
-### The Problem
-There are two bobs with masses m1 and m2. The mass m1 is connected to the wall with a rigid massless string of length L1 and mass m2 is connected to mass m1 with a rigid massles string of Lenght L2.
-The system is shown in the figure below.
+This repository contains a project for the Computer Applications Course (ME303) at Bogazici University, Mechanical Engineering Department. This project investigates the motion of a double pendulum using the **Runge-Kutta 4th Order (RK4)** method and MATLAB's built-in **ode45** function.
 
-The system is shown in the figure below.
+---
 
-<img src="https://github.com/user-attachments/assets/a6096eed-43b9-4102-82d3-ad875fcff87c" alt="Time Period" width="400">
+## Mathematical Model
 
-The forces acting on mass m1 is as seen in the figure below.
+The system consists of two bobs with masses m<sub>1</sub> and m<sub>2</sub>. The mass m<sub>1</sub> is connected to a fixed wall with a rigid, massless string of length L<sub>1</sub>. Similarly, the mass m<sub>2</sub> is connected to m<sub>1</sub> with another rigid, massless string of length L<sub>2</sub>. The system is depicted below:
 
-<img src="https://github.com/user-attachments/assets/cdcf8a70-0630-4c61-b3e7-6a265c682c15" alt="Time Period" width="400">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a6096eed-43b9-4102-82d3-ad875fcff87c" alt="Double Pendulum Setup" width="300">
+</p>
 
-The corresponding equations of motion for the mass m1 are as follows:
+### Forces Acting on m<sub>1</sub>
 
-<img src="https://github.com/user-attachments/assets/06df0483-fd15-4249-aa86-bc8866ce21d1" alt="Time Period" width="400">
+The forces acting on m<sub>1</sub> are shown in the figure below:
 
-The forces acting on mass m2 is as seen in the figure below.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cdcf8a70-0630-4c61-b3e7-6a265c682c15" alt="Forces on m1" width="300">
+</p>
 
-<img src="https://github.com/user-attachments/assets/5b95c3ee-4802-46c8-9e31-7feaecd01419" alt="Time Period" width="400">
+The corresponding equations of motion for m<sub>1</sub> are:
 
-The corresponding equations of motion for mass m2 are as follows. 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/06df0483-fd15-4249-aa86-bc8866ce21d1" alt="Equations of Motion for m1" width="350">
+</p>
 
-<img src="https://github.com/user-attachments/assets/a7e3e1f4-8f4a-4563-bce3-f60f41d5d00d" alt="Time Period" width="400">
+### Forces Acting on m<sub>2</sub>
 
-When necessary transformations and simplifications are performed using the existing relations, the equations for theta1 and theta2 can be written in their matrix forms as follows:
+The forces acting on m<sub>2</sub> are shown in the figure below:
 
-<img src="https://github.com/user-attachments/assets/fa6667ce-2e53-4893-9fa1-608f0d4aace5" alt="Time Period" width="400">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5b95c3ee-4802-46c8-9e31-7feaecd01419" alt="Forces on m2" width="300">
+</p>
 
-Then, the equations for theta1 and theta2 are multiplied with the inverse of the A matrix and written in their explicit forms as follows:
+The corresponding equations of motion for m<sub>2</sub> are:
 
-<img src="https://github.com/user-attachments/assets/343fc51a-ea42-4cfb-84fc-8b3aae5ef430" alt="Time Period" width="400">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a7e3e1f4-8f4a-4563-bce3-f60f41d5d00d" alt="Equations of Motion for m2" width="350">
+</p>
 
-To solve this set of differential equations using numerical methods, they are written as a system of first order differential equations as follows:
+---
 
-<img src="https://github.com/user-attachments/assets/00f385ae-d037-43e9-9d9b-2b32862170de" alt="Time Period" width="400">
+## Matrix Form and Simplifications
 
-Thus, the equations become as follows:
+After performing the necessary transformations and simplifications, the equations for θ<sub>1</sub> and θ<sub>2</sub> can be written in matrix form as follows:
 
-<img src="https://github.com/user-attachments/assets/bceebe90-679f-4307-9ca5-89266bc548c3" alt="Time Period" width="400">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fa6667ce-2e53-4893-9fa1-608f0d4aace5" alt="Matrix Form" width="400">
+</p>
 
-Where the coefficient matrix are defined as follows:
+The detailed derivation of these equations is provided in the last section to demonstrate how the transformations and simplifications are applied step-by-step.
 
-<img src="https://github.com/user-attachments/assets/34667538-a89e-41b8-afc2-be86c39f2a78" alt="Time Period" width="400">
+By multiplying with the inverse of the A matrix, the explicit equations for θ<sub>1</sub> and θ<sub>2</sub> are obtained:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/343fc51a-ea42-4cfb-84fc-8b3aae5ef430" alt="Explicit Equations" width="400">
+</p>
+
+---
+
+## First-Order Differential Equations
+
+To solve this set of equations using numerical methods, they are converted into a system of first-order differential equations:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/00f385ae-d037-43e9-9d9b-2b32862170de" alt="First Order System" width="400">
+</p>
+
+The system becomes:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bceebe90-679f-4307-9ca5-89266bc548c3" alt="Expanded System" width="400">
+</p>
+
+Where the coefficient matrices are defined as:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/34667538-a89e-41b8-afc2-be86c39f2a78" alt="Coefficient Matrices" width="400">
+</p>
+
+---
+
+## Initial Conditions
+
+The physical values and initial conditions for the example solution are:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/eebe5fd5-afa0-4855-b79b-0ef32b998232" alt="Physical Values" width="400">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a6adb2de-6684-42e9-93b5-6acbcd90f011" alt="Initial Conditions" width="400">
+</p>
+
+---
+
+## Example Solution
+
+Using the default values and solving with both the **RK4** method and MATLAB's **ode45** function, the following results are obtained:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9be67253-9700-40fc-9973-8cf73a4157e5" alt="Example Solution" width="400">
+</p>
+
+The animation generated by the **ode45** method is shown below:
+
+<p align="center">
+  <video width="600" controls>
+    <source src="https://github.com/user-attachments/assets/772a1a99-d9ef-4e0b-8457-21fccc97cdb9" type="video/mp4">
+  </video>
+</p>
 
 
 
-### The Problem
+
+---
+
+## Task
+
+The task is to implement the **Runge-Kutta 4th Order (RK4)** method and MATLAB's built-in **ode45** function to solve the given set of differential equations with varying physical values and initial conditions. The goal is to observe how changes in these values affect the results and the behavior of the system.
+
+---
+
+
+
+### Derivation of the Equations
 Since the lengths of the strings are constant, these equations are added  in the x-direction and in the y-direction and reduced to 2 equations, resulting in the following simplified forms:
 
 <img src="" alt="Time Period" width="400">
