@@ -87,11 +87,11 @@ Where the coefficient matrices are defined as:
 The physical values and initial conditions for the example solution are:
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/eebe5fd5-afa0-4855-b79b-0ef32b998232" alt="Physical Values" width="400">
+  <img src="https://github.com/user-attachments/assets/eebe5fd5-afa0-4855-b79b-0ef32b998232" alt="Physical Values" width="375">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a6adb2de-6684-42e9-93b5-6acbcd90f011" alt="Initial Conditions" width="400">
+  <img src="https://github.com/user-attachments/assets/a6adb2de-6684-42e9-93b5-6acbcd90f011" alt="Initial Conditions" width="375">
 </p>
 
 ---
@@ -120,9 +120,12 @@ The task is to implement the **Runge-Kutta 4th Order (RK4)** method and MATLAB's
 
 ## Derivation of the Equations
 
-In this section, the derivation of the final equations are shown step by step.
+In this section, the derivation of the final equations is shown step by step.
 
-#### Equations of Motion
+---
+
+### Equations of Motion
+
 The corresponding equations of motion for both masses are given below:
 
 <p align="center">
@@ -133,39 +136,60 @@ The corresponding equations of motion for both masses are given below:
   <img src="https://github.com/user-attachments/assets/a7e3e1f4-8f4a-4563-bce3-f60f41d5d00d" alt="Equations of Motion for m2" width="350">
 </p>
 
-#### Angular Transformations
-The equations for m<sub>1</sub> are transformed into angular form by multiplying the x-direction equation by costheta1 and the y-direction equation by sintheta1. When these equations are added and simplified, they can be written in the following forms:
+---
 
-<img src="https://github.com/user-attachments/assets/8cdca029-eb9c-4067-986b-bd1f70ea7baf" alt="Time Period" width="400">
+### Angular Transformations
 
-The same operations are performed for m<sub>2</sub> with costheta2 in the x-direction and sintheta2 in the y-direction equation:
+The equations for m<sub>1</sub> are transformed into angular form by multiplying the x-direction equation by cosθ<sub>1</sub> and the y-direction equation by sinθ<sub>1</sub>. When these equations are added and simplified, they can be written in the following forms:
 
-<img src="https://github.com/user-attachments/assets/bc7c48cf-dd35-48bb-a1d7-87d4a2e4a7fb" alt="Time Period" width="400">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e379dd45-1575-48da-9ea1-aacb697f603c" alt="Angular Transformations 1" width="650">
+</p>
+
+The same operations are performed for m<sub>2</sub> with cosθ<sub>2</sub> in the x-direction and sinθ<sub>2</sub> in the y-direction equation:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8c3ac362-dee7-4510-b1e2-4fa90f18832c" alt="Angular Transformations 2" width="650">
+</p>
 
 Thus, the dynamics can be expressed in terms of angular positions and velocities.
 
-#### Coordinate Transformations
-The Cartesian coordinates of the masses can be related to the angles theta1 and theta2 using the following relations:
+---
 
-<img src="https://github.com/user-attachments/assets/c92a89d3-a281-41f1-81d4-3e207867a732" alt="Time Period" width="400">
+### Coordinate Transformations
 
+The Cartesian coordinates of the masses can be related to the angles θ<sub>1</sub> and θ<sub>2</sub> using the following relations:
 
-<img src="https://github.com/user-attachments/assets/47fa0874-2dee-4759-bba9-71fd1dda67c6" alt="Time Period" width="400">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e5c2e1af-4e24-4fb1-a579-13e67c7f8043" alt="Coordinate Transformations 1" width="350">
+</p>
 
-#### Equations of Motion in Angular Form
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d258346f-dabb-447e-b40f-cbcb7434a376" alt="Coordinate Transformations 2" width="350">
+</p>
+
+---
+
+### Equations of Motion in Angular Form
 
 To make the equations more simplified, a reduced mass term for the second bob is defined as follows:
 
-<img src="https://github.com/user-attachments/assets/be192fdb-7941-4578-b735-3b071e7fb374" alt="Time Period" width="400">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4f329ba3-840d-4b23-bb4e-7282a6f88600" alt="Reduced Mass Definition" width="175">
+</p>
 
+After replacing the Cartesian coordinates (x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>) with appropriate forms in terms of θ<sub>1</sub> and θ<sub>2</sub>, their equations of motion are obtained, respectively:
 
-After replacing the Cartesian coordinates (x1,y1,x2,y2) with appropriate forms in terms of theta1 and theta2, their equations of motion are obtained, respectively:
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d3287307-8f71-4811-85a1-e557bdf2f56a" alt="Equations of Motion Theta1" width="575">
+</p>
 
-<img src="https://github.com/user-attachments/assets/60e0883a-ffee-4f67-984e-ff7dfe420466" alt="Time Period" width="400">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/09afe392-ba9b-4e82-9bbd-59505c604592" alt="Equations of Motion Theta2" width="575">
+</p>
 
-<img src="https://github.com/user-attachments/assets/f2fcefde-5dd8-4140-8a8d-d1b5fbc8f67d" alt="Time Period" width="400">
+Finally, they can be written explicitly in the matrix form as follows:
 
-Finally, they can are written explicitly in the matrix form as follows:
-
-<img src="https://github.com/user-attachments/assets/fa6667ce-2e53-4893-9fa1-608f0d4aace5" alt="Time Period" width="400">
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fa6667ce-2e53-4893-9fa1-608f0d4aace5" alt="Matrix Form" width="400">
+</p>
