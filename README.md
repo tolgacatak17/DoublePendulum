@@ -1,12 +1,20 @@
 # Modeling the Behavior of a Double Pendulum
 
-This repository contains a project for the Computer Applications Course (ME303) at Bogazici University, Mechanical Engineering Department. This project investigates the motion of a double pendulum using the **Runge-Kutta 4th Order (RK4)** method and MATLAB's built-in **ode45** function.
+This repository contains a project for the **Computer Applications Course (ME303)** at **Bogazici University**, Mechanical Engineering Department. This project investigates the motion of a double pendulum using the **Runge-Kutta 4th Order (RK4)** method and MATLAB's built-in **ode45** function.
+
+---
+
+## Problem Description
+
+The double pendulum consists of two bobs of masses m<sub>1</sub> and m<sub>2</sub>. The first bob (m<sub>1</sub>) is attached to a fixed pivot by a rigid, massless string of length L<sub>1</sub>, while the second bob (m<sub>2</sub>) is connected to the first by another rigid, massless string of length L<sub>2</sub>. The system's dynamics are governed by nonlinear equations of motion, leading to chaotic behavior under certain conditions.
 
 ---
 
 ## Mathematical Model
 
-The system consists of two bobs with masses m<sub>1</sub> and m<sub>2</sub>. The mass m<sub>1</sub> is connected to a fixed wall with a rigid, massless string of length L<sub>1</sub>. Similarly, the mass m<sub>2</sub> is connected to m<sub>1</sub> with another rigid, massless string of length L<sub>2</sub>. The system's dynamics are governed by nonlinear equations of motion, leading to chaotic behavior under certain conditions. The system is depicted below:
+### System Description
+
+The system is depicted below:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a6096eed-43b9-4102-82d3-ad875fcff87c" alt="Double Pendulum Setup" width="300">
