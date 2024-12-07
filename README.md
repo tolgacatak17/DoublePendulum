@@ -112,7 +112,7 @@ https://github.com/user-attachments/assets/e8ca3182-2022-4dbe-a167-56a892e8f1ed
 
 ## Task
 
-The task is to implement the **Runge-Kutta 4th Order (RK4)** method and MATLAB's built-in **ode45** function to solve the given set of differential equations with varying physical values and initial conditions. The goal is to observe how changes in these values affect the results and the behavior of the system.
+The task is to implement the **Runge-Kutta 4th Order (RK4)** method and MATLAB's built-in **ode45** function to solve the given set of differential equations with varying physical values and initial conditions. The goal is to observe how changes in these values affect the results and the behavior of the system with different methods.
 
 ---
 
