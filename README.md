@@ -6,7 +6,7 @@ This repository contains a project for the Computer Applications Course (ME303) 
 
 ## Mathematical Model
 
-The system consists of two bobs with masses m<sub>1</sub> and m<sub>2</sub>. The mass m<sub>1</sub> is connected to a fixed wall with a rigid, massless string of length L<sub>1</sub>. Similarly, the mass m<sub>2</sub> is connected to m<sub>1</sub> with another rigid, massless string of length L<sub>2</sub>. The system is depicted below:
+The system consists of two bobs with masses m<sub>1</sub> and m<sub>2</sub>. The mass m<sub>1</sub> is connected to a fixed wall with a rigid, massless string of length L<sub>1</sub>. Similarly, the mass m<sub>2</sub> is connected to m<sub>1</sub> with another rigid, massless string of length L<sub>2</sub>. The system's dynamics are governed by nonlinear equations of motion, leading to chaotic behavior under certain conditions. The system is depicted below:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a6096eed-43b9-4102-82d3-ad875fcff87c" alt="Double Pendulum Setup" width="300">
@@ -98,7 +98,7 @@ The physical values and initial conditions for the example solution are:
 
 ## Example Solution
 
-Using the default values and solving with both the **RK4** method and MATLAB's **ode45** function, the following results are obtained:
+Using the default values, the system is solved using both RK4 and ode45 methods. The example solutions are shown below:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/9be67253-9700-40fc-9973-8cf73a4157e5" alt="Example Solution" width="1000">
@@ -112,7 +112,28 @@ https://github.com/user-attachments/assets/e8ca3182-2022-4dbe-a167-56a892e8f1ed
 
 ## Task
 
-The task is to implement the **Runge-Kutta 4th Order (RK4)** method and MATLAB's built-in **ode45** function to solve the given set of differential equations with varying physical values and initial conditions. The goal is to observe how changes in these values affect the results and the behavior of the system with different methods.
+The task is to implement the following:
+1. **Runge-Kutta 4th Order (RK4)** method.
+2. **MATLAB's ode45 function**.
+
+### Goals
+- Observe how initial conditions and physical values affect the system’s chaotic behavior.
+- Compare the results and efficiency of the two numerical methods.
+
+
+---
+
+## Repository Structure
+
+1. **`code/`**: MATLAB scripts for solving the double pendulum equations.
+   - `rk4_double_pendulum.m`: Implementation of RK4.
+   - `ode45_double_pendulum.m`: Implementation of ode45.
+
+2. **`results/`**: Contains solution plots and animations.
+   - `solution_plot.png`: Graph of θ<sub>1</sub> and θ<sub>2</sub>.
+   - `pendulum_animation.mp4`: Animation of the double pendulum motion.
+
+3. **`README.md`**: This file explaining the project and its structure.
 
 ---
 
@@ -120,7 +141,7 @@ The task is to implement the **Runge-Kutta 4th Order (RK4)** method and MATLAB's
 
 ## Derivation of the Equations
 
-In this section, the derivation of the final equations is shown step by step.
+The equations of motion for the double pendulum are derived step by step in this section.
 
 ---
 
@@ -140,25 +161,21 @@ The corresponding equations of motion for both masses are given below:
 
 ### Angular Transformations
 
-The equations for m<sub>1</sub> are transformed into angular form by multiplying the x-direction equation by cosθ<sub>1</sub> and the y-direction equation by sinθ<sub>1</sub>. When these equations are added and simplified, they can be written in the following forms:
+The forces on m<sub>1</sub> and m<sub>2</sub> are transformed into angular form. After applying cosθ and sinθ transformations, the following equations are obtained:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e379dd45-1575-48da-9ea1-aacb697f603c" alt="Angular Transformations 1" width="650">
 </p>
 
-The same operations are performed for m<sub>2</sub> with cosθ<sub>2</sub> in the x-direction and sinθ<sub>2</sub> in the y-direction equation:
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8c3ac362-dee7-4510-b1e2-4fa90f18832c" alt="Angular Transformations 2" width="650">
 </p>
-
-Thus, the dynamics can be expressed in terms of angular positions and velocities.
 
 ---
 
 ### Coordinate Transformations
 
-The Cartesian coordinates of the masses can be related to the angles θ<sub>1</sub> and θ<sub>2</sub> using the following relations:
+The Cartesian coordinates of the masses are related to the angles θ<sub>1</sub> and θ<sub>2</sub> as follows:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e5c2e1af-4e24-4fb1-a579-13e67c7f8043" alt="Coordinate Transformations 1" width="350">
@@ -170,15 +187,19 @@ The Cartesian coordinates of the masses can be related to the angles θ<sub>1</s
 
 ---
 
-### Equations of Motion in Angular Form
+### Reduced Mass
 
-To make the equations more simplified, a reduced mass term for the second bob is defined as follows:
+To simplify the system, a reduced mass term for the second bob is defined:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/4f329ba3-840d-4b23-bb4e-7282a6f88600" alt="Reduced Mass Definition" width="175">
 </p>
 
-After replacing the Cartesian coordinates (x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>) with appropriate forms in terms of θ<sub>1</sub> and θ<sub>2</sub>, their equations of motion are obtained, respectively:
+---
+
+### Coupled Equations
+
+After applying the transformations and substitutions, the final equations of motion for θ<sub>1</sub> and θ<sub>2</sub> are:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d3287307-8f71-4811-85a1-e557bdf2f56a" alt="Equations of Motion Theta1" width="575">
@@ -188,8 +209,23 @@ After replacing the Cartesian coordinates (x<sub>1</sub>, y<sub>1</sub>, x<sub>2
   <img src="https://github.com/user-attachments/assets/09afe392-ba9b-4e82-9bbd-59505c604592" alt="Equations of Motion Theta2" width="575">
 </p>
 
-Finally, they can be written explicitly in the matrix form as follows:
+### Linearized Equations
+
+Using the relations derived from the angular transformations, the linearized equations for θ<sub>1</sub> and θ<sub>2</sub> can be expressed as follows:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fa6667ce-2e53-4893-9fa1-608f0d4aace5" alt="Matrix Form" width="400">
 </p>
+
+Where:
+- **A** is the coefficient matrix containing system properties.
+- **B** is the driving force vector.
+
+By multiplying the equations with the inverse of the A matrix, explicit forms for θ<sub>1</sub> and θ<sub>2</sub> can be written:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/343fc51a-ea42-4cfb-84fc-8b3aae5ef430" alt="Explicit Equations" width="500">
+</p>
+
+---
+
