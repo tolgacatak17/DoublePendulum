@@ -133,11 +133,11 @@ The task is to implement the following:
 
 ## Repository Structure
 
-1. **`code/`**: Contains the MATLAB script for solving and simulating the double pendulum motion.
+1. **`animations/`**: Contains animations of the double pendulum motion with varying initial and boundary conditions.
 
-2. **`figures/`**: Contains solution plots and visualizations with varying initial and boundary conditions.
+2. **`code/`**: Contains the MATLAB script for solving and simulating the double pendulum motion.
 
-3. **`animations/`**: Contains animations of the double pendulum motion with varying initial and boundary conditions.
+3. **`figures/`**: Contains solution plots and visualizations with varying initial and boundary conditions.
 
 4. **`report/`**: Contains the detailed report explaining the mathematical model, methodology, and analysis of results.
    
