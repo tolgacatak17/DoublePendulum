@@ -133,7 +133,7 @@ The task is to implement the following:
 
 ## Repository Structure
 
-The repository is organized as follows:
+This repository is organized as follows:
 
 1. **`animations/`**: Contains animations of the double pendulum motion generated for various initial and boundary conditions.
 
