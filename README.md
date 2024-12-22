@@ -133,15 +133,15 @@ The task is to implement the following:
 
 ## Repository Structure
 
-1. **`code/`**: MATLAB scripts for solving the double pendulum equations.
-   - `rk4_double_pendulum.m`: Implementation of RK4.
-   - `ode45_double_pendulum.m`: Implementation of ode45.
+1. **`code/`**: Contains the MATLAB script for solving and simulating the double pendulum motion.
 
-2. **`results/`**: Contains solution plots and animations.
-   - `solution_plot.png`: Graph of θ<sub>1</sub> and θ<sub>2</sub>.
-   - `pendulum_animation.mp4`: Animation of the double pendulum motion.
+2. **`figures/`**: Contains solution plots and visualizations with varying initial and boundary conditions.
 
-3. **`README.md`**: This file explaining the project and its structure.
+3. **`animations/`**: Contains animations of the double pendulum motion with varying initial and boundary conditions.
+
+4. **`report/`**: Contains the detailed report explaining the mathematical model, methodology, and analysis of results.
+   
+5. **`README.md`**: Provides an overview of the project, its goals, and instructions for running the code and simulations.
 
 ---
 
