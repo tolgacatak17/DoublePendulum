@@ -141,7 +141,7 @@ This repository is organized as follows:
 
 3. **`report/`**: Contains a detailed report explaining the mathematical model, methodology, and analysis of the results.
 
-4. **`code/`**: Contains the MATLAB script for solving and simulating the double pendulum motion.
+4. **`src/`**: Contains the MATLAB script for solving and simulating the double pendulum motion.
 
 5. **`README.md`**: Provides an overview of the project, its objectives, and the repository structure.
 
